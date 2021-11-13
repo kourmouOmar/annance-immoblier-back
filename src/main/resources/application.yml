@@ -1,0 +1,23 @@
+
+## application informations
+info:
+  app:
+    name: immoblier service application
+    description: Microservice IMO-SERVICE
+    version: 1.0.0
+
+server:
+  port: 1010
+  servlet:
+    context-path: /imo-api
+ 
+
+## h2 settings
+spring:
+  datasource:
+    url: jdbc:h2:mem:mydb
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+  jpa:
+    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
