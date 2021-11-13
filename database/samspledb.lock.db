@@ -1,0 +1,6 @@
+#FileLock
+#Sat Nov 13 23:09:58 WEST 2021
+hostName=192.168.31.185
+id=17d1b599efd4979818636ecfdc3a03eb4d4ff14763c
+method=file
+server=192.168.31.185\:53601

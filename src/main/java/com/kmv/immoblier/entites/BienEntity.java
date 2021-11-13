@@ -35,7 +35,7 @@ public class BienEntity implements Cloneable {
 	private String description;
 	
 	@Lob
-	@Column(name = "image",columnDefinition="MEDIUMBLOB", nullable = false, length = 255)
+	@Column(name = "image",columnDefinition="MEDIUMBLOB", nullable = true, length = 255)
 	private byte[] image;
 	
 	public Long getId() {

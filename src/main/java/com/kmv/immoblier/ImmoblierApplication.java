@@ -8,12 +8,15 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.event.ContextClosedEvent;
 
+
 @SpringBootApplication
 @ComponentScan(basePackages = { "com.kmv" })
-public class ImmoblierApplication {
+public class ImmoblierApplication  {
 
 	private static Logger logger = LoggerFactory.getLogger(ImmoblierApplication.class);
-
+	
+	
+	
 	public static ConfigurableApplicationContext startMicroService(String[] args) {
 		ConfigurableApplicationContext ctx = SpringApplication.run(ImmoblierApplication.class, args);
 		ctx.addApplicationListener((ContextClosedEvent arg0) -> ctx.close());
@@ -26,5 +29,5 @@ public class ImmoblierApplication {
 			logger.info(" [immobilier-service] started correctly.");
 		}
 	}
-
+	
 }

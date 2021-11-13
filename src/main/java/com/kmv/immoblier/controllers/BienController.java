@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.web.ServerProperties;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -33,6 +34,7 @@ import com.kmv.immoblier.utils.Constants;
 
 @RestController
 @RequestMapping("/biens")
+@CrossOrigin(origins = "*", allowedHeaders = "*", maxAge = 3600)
 public class BienController {
 	
 	private static Logger logger = LoggerFactory.getLogger(BienController.class);
@@ -87,7 +89,7 @@ public class BienController {
 	* @return {ResponseEntity}
 	*
 	*/
-	@PostMapping(value = "/v0/{id}", headers = Constants.HEADERS)
+	@PostMapping(value = "/v0", headers = Constants.HEADERS)
 	public ResponseEntity<BienDto> addAcheteur(@RequestBody BienDto bienDto) {
 		if (logger.isInfoEnabled()) {
 			logger.info( null ,serverProperties.getPort(), "save bien", null,
