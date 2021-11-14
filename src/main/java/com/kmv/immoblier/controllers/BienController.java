@@ -72,13 +72,13 @@ public class BienController {
 	*
 	*/
 	@GetMapping(value = "/v0/{id}", headers = Constants.HEADERS)
-	public ResponseEntity<BienEntity>  getAcheteurById(@PathVariable Long id) {
+	public ResponseEntity<BienDto>  getAcheteurById(@PathVariable Long id) {
 		if (logger.isInfoEnabled()) {
 			logger.info( null ,serverProperties.getPort(), "get bien by id", null,
 			RsMethodEnum.GET.getValue(), "/biens/v0", "id:"+id);
 		}
 		/* return bien by id */
-		return new ResponseEntity<BienEntity>(bienService.getBienById(id), HttpStatus.OK);
+		return new ResponseEntity<BienDto>(BienDto.entityToDto(bienService.getBienById(id)), HttpStatus.OK);
 	}
 	
 	/**
